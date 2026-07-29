@@ -1,9 +1,5 @@
 # ChipPulse AI
 
-![ChipPulse AI Banner](https://via.placeholder.com/1200x400/0f172a/38bdf8?text=ChipPulse+AI+-+Intelligent+Thermal+Floorplanning)
-
-ChipPulse AI is a modern, interactive web application designed for analyzing and optimizing silicon chip floorplans. It combines a real-time **2D Finite Difference Method (FDM) physics engine** to simulate heat dissipation with the power of the **Google Gemini AI API** to act as your expert thermal architect, providing actionable layout recommendations.
-
 ## Key Features
 
 - **Interactive Chip Canvas:** Drag and drop CPU cores, GPU clusters, memory controllers, and more onto a 16x16 mm silicon die.
