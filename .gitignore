@@ -1,0 +1,24 @@
+# Node
+node_modules/
+dist/
+build/
+.npm/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+*.env
+.pytest_cache/
+
+# Environment Variables (CRITICAL: Do not commit your Gemini API Key)
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
