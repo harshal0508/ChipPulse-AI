@@ -299,8 +299,9 @@ def solve(layout: Any, solver_config: Any) -> FDMResult:
                     nbrs.append(robin_bc_ghost(T[i, j], h_eff, k_T, dx, T_amb))
 
                 # Discrete Poisson update:  ∇²T ≈ (Σneighbours - 4*T) / dx²
-                # Rearranged: T = (Σneighbours + Q_net*dx²/k) / 4
-                T_new = (sum(nbrs) + Q_net * dx * dx / k_T) / 4.0
+                # Rearranged: T = (Σneighbours + Q_net*dx²/(k*d)) / 4
+                chip_thickness_m = 0.0001  # 100 µm active silicon thickness
+                T_new = (sum(nbrs) + Q_net * dx * dx / (k_T * chip_thickness_m)) / 4.0
 
                 # Temperature floor = ambient (physically no sub-ambient in SS)
                 T[i, j] = max(T_amb, T_new)
