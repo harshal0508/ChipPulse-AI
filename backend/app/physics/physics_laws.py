@@ -35,6 +35,13 @@ COMPONENT_DEFAULTS: Dict[str, Dict[str, float]] = {
     "cache_sram":  {"power_mW": 50,  "voltage_V": 0.9, "freq_GHz": 3.2, "switching_activity": 0.1},
     "io_ctrl":     {"power_mW": 30,  "voltage_V": 1.8, "freq_GHz": 0.8, "switching_activity": 0.4},
     "pmu":         {"power_mW": 20,  "voltage_V": 3.3, "freq_GHz": 0.1, "switching_activity": 0.1},
+    "npu_accelerator":        {"power_mW": 220, "voltage_V": 1.1, "freq_GHz": 2.0, "switching_activity": 0.4},
+    "image_signal_processor": {"power_mW": 130, "voltage_V": 1.1, "freq_GHz": 1.5, "switching_activity": 0.3},
+    "media_engine":           {"power_mW": 70,  "voltage_V": 1.0, "freq_GHz": 1.2, "switching_activity": 0.2},
+    "wireless_modem":         {"power_mW": 140, "voltage_V": 1.2, "freq_GHz": 0.8, "switching_activity": 0.3},
+    "secure_enclave":         {"power_mW": 15,  "voltage_V": 1.0, "freq_GHz": 1.0, "switching_activity": 0.1},
+    "clock_pll":              {"power_mW": 12,  "voltage_V": 1.8, "freq_GHz": 4.0, "switching_activity": 0.5},
+    "bus_fabric":             {"power_mW": 45,  "voltage_V": 1.0, "freq_GHz": 1.8, "switching_activity": 0.4},
 }
 
 # ---------------------------------------------------------------------------

@@ -26,7 +26,7 @@ class ComponentInput(BaseModel):
     id: str = Field(..., description="Unique component identifier")
     type: str = Field(
         "cpu_core",
-        description="Component type: cpu_core | gpu_cluster | mem_ctrl | cache_sram | io_ctrl | pmu",
+        description="Component type (e.g. cpu_core, gpu_cluster, etc.)",
     )
     x: int = Field(0, ge=0, description="Left column (0-indexed)")
     y: int = Field(0, ge=0, description="Top row (0-indexed)")
@@ -42,7 +42,11 @@ class ComponentInput(BaseModel):
     @field_validator("type")
     @classmethod
     def validate_type(cls, v: str) -> str:
-        valid_types = {"cpu_core", "gpu_cluster", "mem_ctrl", "cache_sram", "io_ctrl", "pmu"}
+        valid_types = {
+            "cpu_core", "gpu_cluster", "mem_ctrl", "cache_sram", "io_ctrl", "pmu",
+            "npu_accelerator", "image_signal_processor", "media_engine",
+            "wireless_modem", "secure_enclave", "clock_pll", "bus_fabric"
+        }
         if v not in valid_types:
             raise ValueError(f"type must be one of {valid_types}")
         return v
